@@ -11,6 +11,10 @@ import {
    import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css';
    import'../node_modules/bootstrap/dist/js/bootstrap.bundle';
    import'../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
+import Signup from "./screens/Signup";
+import { CartProvider } from "./components/ContextReducer";
+import { useContext } from "react";
+import MyOrder from "./screens/MyOrder";
    
 
 
@@ -18,16 +22,22 @@ import {
 function App() {
   return (
     <>
+    <CartProvider>
+
+    
       <Router>
     
     
       <Routes>
         <Route exact path="/" element={<Home></Home>} />
         <Route exact path="/login" element={<Login/>} />
+        <Route exact path="/createuser" element={<Signup/>} />
+        <Route exact path="/myOrder" element={<MyOrder/>} />
         
       </Routes>
 
       </Router>
+      </CartProvider>
       
     </>
   );
